@@ -1,0 +1,121 @@
+﻿<Page
+    x:Class="AuctionApp.src.pages.MainMenuPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:AuctionApp.src.pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainMenuPage"
+    d:Background="#D7DBFF"
+    d:DesignHeight="800"
+    d:DesignWidth="360"
+    mc:Ignorable="d">
+
+    <StackPanel x:Name="app">
+        <StackPanel
+            Height="124"
+            Background="#96A0FF"
+            Orientation="Horizontal">
+
+            <Image
+                x:Name="Logo"
+                Width="111"
+                Height="66"
+                Margin="25,0,0,0"
+                Source="/src/pages/Logo.png" />
+            <Image
+                x:Name="UserIcon"
+                Width="65"
+                Height="70"
+                Margin="134,0,0,0"
+                HorizontalAlignment="Right"
+                Source="/src/pages/userIcon.png" />
+
+        </StackPanel>
+
+        <StackPanel
+            x:Name="BoughtList"
+            Width="360"
+            Height="34"
+            Margin="0,15,0,0"
+            HorizontalAlignment="Left"
+            Background="#FFA755"
+            MouseLeftButtonUp="BoughtList_MouseLeftButtonUp"
+            Orientation="Horizontal">
+
+            <Image
+                x:Name="BoughtListIcon"
+                Width="26"
+                Height="26"
+                Margin="5,0,0,0"
+                Source="/src/pages/crateAdd.png" />
+
+            <TextBlock
+                x:Name="BoughtListText"
+                Width="278"
+                Margin="5,0,0,0"
+                VerticalAlignment="Center"
+                FontFamily="Inter"
+                FontSize="20">
+                Купленные лоты
+            </TextBlock>
+
+            <Image
+                x:Name="BoughtListUnfoldButton"
+                Width="33.76"
+                Height="20.13"
+                Margin="5,0,0,0"
+                Source="/src/pages/arrowDown.png" />
+
+        </StackPanel>
+
+        <ListBox
+            x:Name="BoughtItemsList"
+            Background="#FFA755"
+            BorderThickness="0"
+            Visibility="Collapsed" />
+
+
+        <StackPanel
+            x:Name="SoldList"
+            Width="360"
+            Height="34"
+            Margin="0,15,0,0"
+            HorizontalAlignment="Left"
+            Background="#FFA755"
+            Orientation="Horizontal">
+
+            <Image
+                x:Name="SoldListIcon"
+                Width="26"
+                Height="26"
+                Margin="5,0,0,0"
+                Source="/src/pages/coinsPlus.png" />
+
+            <TextBlock
+                x:Name="SoldListText"
+                Width="278"
+                Margin="5,0,0,0"
+                VerticalAlignment="Center"
+                FontFamily="Inter"
+                FontSize="20">
+                Проданные лоты
+            </TextBlock>
+
+            <Image
+                x:Name="SoldListUnfoldButton"
+                Width="33.76"
+                Height="20.13"
+                Margin="5,0,0,0"
+                Source="/src/pages/arrowDown.png" />
+
+        </StackPanel>
+
+        <ListBox
+            x:Name="SoldItemsList"
+            Background="#FFA755"
+            BorderThickness="0"
+            Visibility="Collapsed" />
+
+    </StackPanel>
+</Page>

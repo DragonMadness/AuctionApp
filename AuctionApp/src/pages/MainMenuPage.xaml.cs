@@ -1,0 +1,41 @@
+﻿using AuctionApp.src.model;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace AuctionApp.src.pages
+{
+    /// <summary>
+    /// Interaction logic for MainMenuPage.xaml
+    /// </summary>
+    public partial class MainMenuPage : Page
+    {
+
+        private User CurrentUser {  get; set; }
+
+        public MainMenuPage(User CurrentUser)
+        {
+            InitializeComponent();
+            this.CurrentUser = CurrentUser;
+        }
+
+        private void BoughtList_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            CurrentUser.GetPassword();
+
+            BoughtItemsList.Visibility = Visibility.Visible;
+        }
+    }
+}

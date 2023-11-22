@@ -8,11 +8,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="src\pages\arrowDown.png" />
+    <None Remove="src\pages\coinsPlus.png" />
+    <None Remove="src\pages\crateAdd.png" />
     <None Remove="src\pages\Logo.png" />
+    <None Remove="src\pages\userIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="XAct.Core.PCL" Version="0.0.5014" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="src\pages\arrowDown.png" />
+    <Resource Include="src\pages\coinsPlus.png" />
+    <Resource Include="src\pages\crateAdd.png" />
     <Resource Include="src\pages\Logo.png" />
+    <Resource Include="src\pages\userIcon.png" />
   </ItemGroup>
 
 </Project>
