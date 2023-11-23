@@ -45,6 +45,8 @@ namespace AuctionApp.src
                 return;
             }
 
+            Hash(PasswordBox.Text);
+
             User user = User.GetUser(DatabaseAccessor, LoginBox.Text);
             if (user == null)
             {
@@ -57,13 +59,14 @@ namespace AuctionApp.src
                 return;
             }
 
+            Page nextPage = new MainMenuPage(user);
             NavigationService.GetNavigationService(this).Navigate(new MainMenuPage(user));
 
         }
 
-        private string Hash(string text)
+        private void Hash(string text)
         {
-            return SecretHasher.Hash(text);
+            testHash.Text = SecretHasher.Hash(text);
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Windows.Data;
 
 namespace AuctionApp.src.util
 {
-    public class SecretHasher : IValueConverter
+    public class SecretHasher
     {
         private const int _saltSize = 16; // 128 bits
         private const int _keySize = 32; // 256 bits
@@ -41,8 +41,8 @@ namespace AuctionApp.src.util
         public static bool Verify(string input, string hashString)
         {
             string[] segments = hashString.Split(segmentDelimiter);
-            byte[] hash = System.Convert.FromHexString(segments[0]);
-            byte[] salt = System.Convert.FromHexString(segments[1]);
+            byte[] hash = Convert.FromHexString(segments[0]);
+            byte[] salt = Convert.FromHexString(segments[1]);
             int iterations = int.Parse(segments[2]);
             HashAlgorithmName algorithm = new HashAlgorithmName(segments[3]);
             byte[] inputHash = Rfc2898DeriveBytes.Pbkdf2(

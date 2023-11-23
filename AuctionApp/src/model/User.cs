@@ -15,10 +15,11 @@ namespace AuctionApp.src.model
         private readonly string Login;
         private readonly string Password;
 
-        public User (string name, string passportNumber, string password)
+        public User (string name, string passportNumber, string login, string password)
         {
             this.Name = name;
             this.PassportNumber = passportNumber;
+            this.Login = login;
             this.Password = password;
         }
 
@@ -27,7 +28,7 @@ namespace AuctionApp.src.model
             string[] data = raw.Split(';');
             if (data.Length < 3) throw new ArgumentException();
 
-            return new User(data[0], data[1], data[2]);
+            return new User(data[1], data[2], data[4], data[5]);
         }
 
         public static User GetUser(DatabaseAccessor accessor, string login)
